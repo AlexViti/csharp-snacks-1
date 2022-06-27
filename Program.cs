@@ -24,7 +24,7 @@ for (int i = 0; i < int.Parse(input10); i++)
     {
         array[j] = random.Next(1, 101);
     }
-    Console.WriteLine(string.Join(", ", array));
+    Console.WriteLine($"Array {i + 1}: [{ string.Join(", ", array) }]");
 }
 
 /*
