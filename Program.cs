@@ -39,7 +39,7 @@ else
  * Snack 2
  * L'utente inserisce due parole in successione.
  * Il software stampa prima la parola più lunga e poi quella più corta
-*/
+
 
 Console.WriteLine("Inserisci due parole");
 string? input3 = Console.ReadLine();
@@ -51,3 +51,24 @@ Console.WriteLine(output);
  * Snack 3) - Il software deve chiedere per 10 volte all’utente di inserire un numero.
  * Il programma stampa la somma di tutti i numeri inseriti.
 */
+
+
+Console.WriteLine("Snack 3");
+Console.WriteLine("Inserisci 10 numeri");
+int inp;
+int sum = 0;
+
+for (int i = 0; i < 10; i++)
+{
+    Console.WriteLine($"Inserisci {i + 1}° numero");
+    string? input = Console.ReadLine();
+    while (!int.TryParse(input, out inp))
+    {
+        Console.WriteLine("Inserisci un numero");
+        input = Console.ReadLine();
+    }
+    int num = int.Parse(input);
+    sum += num;
+}
+
+Console.WriteLine($"La somma è {sum}");
