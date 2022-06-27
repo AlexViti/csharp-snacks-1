@@ -1,5 +1,4 @@
-﻿int parse;
-Random random = new Random();
+﻿Random random = new Random();
 
 /*
  * Snack 10
@@ -11,7 +10,7 @@ Console.WriteLine("\nSNACK 10\n");
 
 Console.WriteLine("Inserisci un numero");
 string? input10 = Console.ReadLine();
-while (!int.TryParse(input10, out parse))
+while (!int.TryParse(input10, out _))
 {
     Console.WriteLine("Inserisci un numero");
     input10 = Console.ReadLine();
@@ -35,7 +34,7 @@ Console.WriteLine("\nSNACK 5\n");
 
 Console.WriteLine("Inserisci un numero, se il numero è pari verrà stampato, altrimenti verrà stampato il numero successivo");
 string? input50 = Console.ReadLine();
-while (!int.TryParse(input50, out parse))
+while (!int.TryParse(input50, out _))
 {
     Console.WriteLine("Inserisci un numero");
     input50 = Console.ReadLine();
@@ -78,7 +77,7 @@ for (int i = 0; i < 10; i++)
 {
     Console.WriteLine($"Inserisci {i + 1}° numero");
     string? input = Console.ReadLine();
-    while (!int.TryParse(input, out parse))
+    while (!int.TryParse(input, out _))
     {
         Console.WriteLine("Inserisci un numero");
         input = Console.ReadLine();
@@ -99,7 +98,11 @@ Console.WriteLine("Inserisci due parole");
 string? input3 = Console.ReadLine();
 string? input4 = Console.ReadLine();
 
-string output = input3.Length > input4.Length ? input3 + " " + input4 : input4 + " " + input3;
+string output = "";
+if (!string.IsNullOrEmpty(input3) && !string.IsNullOrEmpty(input4))
+{
+    output += input3.Length > input4.Length ? input3 + " " + input4 : input4 + " " + input3;
+}
 Console.WriteLine(output);
 
 /* 
@@ -107,21 +110,20 @@ Console.WriteLine(output);
  * L'utente inserisce due numeri in successione. Il software stampa il maggiore
 */
 
-int integer;
 Console.WriteLine("\nSNACK 1\n");
 
 Console.WriteLine("Inserisci due numeri, verrà stampato il maggiore");
 
 Console.WriteLine("Inserisci il primo numero");
 string? input1 = Console.ReadLine();
-while (!int.TryParse(input1, out integer)) {
+while (!int.TryParse(input1, out _)) {
     Console.WriteLine("Inserisci un numero");
     input1 = Console.ReadLine();
 }
 
 Console.WriteLine("Inserisci il secondo numero");
 string? input2 = Console.ReadLine();
-while (!int.TryParse(input2, out integer) )
+while (!int.TryParse(input2, out _) )
 {
     Console.WriteLine("Inserisci un numero");
     input2 = Console.ReadLine();
