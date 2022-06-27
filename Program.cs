@@ -1,4 +1,32 @@
 ﻿int parse;
+Random random = new Random();
+
+/*
+ * Snack 10
+ * Fai inserire un numero, che chiameremo N, all'utente.
+ * Genera N array, ognuno formato da 10 numeri casuali tra 1 e 100.
+ * Ogni volta che ne crei uno, stampalo a schermo
+*/
+Console.WriteLine("\nSNACK 10\n");
+
+Console.WriteLine("Inserisci un numero");
+string? input10 = Console.ReadLine();
+while (!int.TryParse(input10, out parse))
+{
+    Console.WriteLine("Inserisci un numero");
+    input10 = Console.ReadLine();
+}
+
+for (int i = 0; i < int.Parse(input10); i++)
+{
+    int[] array = new int[10];
+    for (int j = 0; j < array.Length; j++)
+    {
+        array[j] = random.Next(1, 101);
+    }
+    Console.WriteLine(string.Join(", ", array));
+}
+
 /*
  * Snack 5
  * Il software deve chiedere all'utente di inserire un numero. Se il numero inserito è pari, stampa il numero, se è dispari, stampa il numero successivo
@@ -31,7 +59,7 @@ for (int i = begin; i <= end; i++)
     sum2 += i;
 }
 
-float avg = sum2 * 1f / (10 - 2);
+float avg = sum2 / (10 - 2);
 
 Console.WriteLine($"La somma dei numeri da {begin} a {end} è {sum2}\nLa media è {avg}");
 
