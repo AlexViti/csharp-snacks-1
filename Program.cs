@@ -1,9 +1,27 @@
-﻿/*
+﻿int parse;
+/*
+ * Snack 5
+ * Il software deve chiedere all'utente di inserire un numero. Se il numero inserito è pari, stampa il numero, se è dispari, stampa il numero successivo
+*/
+Console.WriteLine("\nSNACK 5\n");
+
+Console.WriteLine("Inserisci un numero, se il numero è pari verrà stampato, altrimenti verrà stampato il numero successivo");
+string? input50 = Console.ReadLine();
+while (!int.TryParse(input50, out parse))
+{
+    Console.WriteLine("Inserisci un numero");
+    input50 = Console.ReadLine();
+}
+
+int output50 = int.Parse(input50) % 2 == 0 ? int.Parse(input50) : int.Parse(input50) + 1;
+Console.WriteLine(output50);
+
+/*
  * Snack 4
  * Calcola la somma e la media dei numeri da 2 a 10
 */
 
-Console.WriteLine("SNACK 4\n");
+Console.WriteLine("\nSNACK 4\n");
 int sum2 = 0;
 int begin = 2;
 int end = 10;
@@ -23,16 +41,16 @@ Console.WriteLine($"La somma dei numeri da {begin} a {end} è {sum2}\nLa media �
  * Il programma stampa la somma di tutti i numeri inseriti.
 */
 
-Console.WriteLine("Snack 3");
-Console.WriteLine("Inserisci 10 numeri");
-int inp;
+Console.WriteLine("\nSNACK 3\n");
+
+Console.WriteLine("Inserisci 10 numeri, verrà stampata la loro somma");
 int sum = 0;
 
 for (int i = 0; i < 10; i++)
 {
     Console.WriteLine($"Inserisci {i + 1}° numero");
     string? input = Console.ReadLine();
-    while (!int.TryParse(input, out inp))
+    while (!int.TryParse(input, out parse))
     {
         Console.WriteLine("Inserisci un numero");
         input = Console.ReadLine();
@@ -62,13 +80,17 @@ Console.WriteLine(output);
 */
 
 int integer;
-Console.WriteLine("Snack 1");
+Console.WriteLine("\nSNACK 1\n");
+
+Console.WriteLine("Inserisci due numeri, verrà stampato il maggiore");
+
 Console.WriteLine("Inserisci il primo numero");
 string? input1 = Console.ReadLine();
 while (!int.TryParse(input1, out integer)) {
     Console.WriteLine("Inserisci un numero");
     input1 = Console.ReadLine();
 }
+
 Console.WriteLine("Inserisci il secondo numero");
 string? input2 = Console.ReadLine();
 while (!int.TryParse(input2, out integer) )
