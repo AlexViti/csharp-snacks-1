@@ -1,6 +1,27 @@
 ﻿Random random = new Random();
 
 /*
+ * Snack 12
+ * Scrivere una funzione per verificare se un numero è pari o dispari.
+ * Quindi chiedere un numero all'utente e comunicargli se è pari o dispari.
+ */
+
+bool isEven(int number)
+{
+    return number % 2 == 0;
+}
+
+Console.WriteLine("Inserisci un numero, il software ti comunica se è pari o dispari");
+string? input12 = Console.ReadLine();
+while (!int.TryParse(input12, out _))
+{
+    Console.WriteLine("Inserisci un numero");
+    input12 = Console.ReadLine();
+}
+string output = "Il numero inserito è ";
+output += isEven(int.Parse(input12)) ? "pari" : "dispari";
+
+/*
  * Snack 11
  * Dare la possibilità di inserire due parole.
  * Verificare tramite una funzione che le due parole abbiano la stessa
