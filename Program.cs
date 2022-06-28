@@ -85,6 +85,59 @@ for (int i = 0; i < int.Parse(input10); i++)
 }
 
 /*
+ * Snack 8
+ * Crea un array di numeri interi e fai la somma di tutti gli elementi che
+ * sono in posizione dispari.
+ */
+
+int[] arr8 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+int sum8 = 0;
+for (int i=1; i < arr8.Length; i += 2)
+{
+    sum8 += arr8[i];
+}
+
+Console.WriteLine(sum8);
+
+/*
+ * Snack 7
+ * Crea un array vuoto.
+ * Chiedi per 6 volte all’utente di inserire un numero, se è dispari
+ * inseriscilo nell’array.
+ */
+
+Console.WriteLine("\nSNACK 7\n");
+
+int?[] numbers = new int?[6];
+
+for (int i = 0; i < numbers.Length; i++)
+{
+    Console.WriteLine("Inserisci un numero");
+    string? input7 = Console.ReadLine();
+
+    while (!int.TryParse(input7, out _))
+    {
+        Console.WriteLine("Inserisci un numero");
+        input7 = Console.ReadLine();
+    }
+    if (int.Parse(input7) % 2 != 0)
+    {
+        numbers[i] = int.Parse(input7);
+    }
+}
+
+Console.Write("[");
+for (int i = 0; i < numbers.Length; i++)
+{
+    if (numbers[i] != null)
+    {
+        Console.Write($"{numbers[i]}, ");
+    }
+}
+Console.WriteLine("]");
+
+/*
  * Snack 6
  * In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby. Chiedi all'utente il suo nome e comunicagli se può partecipare o meno alla festa
 */
