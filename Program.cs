@@ -1,6 +1,37 @@
 ﻿Random random = new Random();
 
 /*
+ * Snack 11
+ * Dare la possibilità di inserire due parole.
+ * Verificare tramite una funzione che le due parole abbiano la stessa
+ * lunghezza. Se hanno la stessa lunghezza, stamparle entrambe,
+ * altrimenti stampare la più lunga delle due.
+ */
+
+string PrintStrings(string first, string second)
+{
+    if (first.Length == second.Length)
+    {
+        return first + " " + second;
+    }
+    else if (first.Length > second.Length)
+    {
+        return first;
+    }
+    else
+    {
+        return second;
+    }
+}
+
+Console.WriteLine("Inserisci una parola");
+string firstString = Console.ReadLine();
+Console.WriteLine("Inserisci un'altra parola");
+string SecondString = Console.ReadLine();
+Console.WriteLine(PrintStrings(firstString, SecondString));
+
+
+/*
  * Snack 10
  * Fai inserire un numero, che chiameremo N, all'utente.
  * Genera N array, ognuno formato da 10 numeri casuali tra 1 e 100.
@@ -25,6 +56,40 @@ for (int i = 0; i < int.Parse(input10); i++)
     }
     Console.WriteLine($"Array {i + 1}: [{ string.Join(", ", array) }]");
 }
+
+/*
+ * Snack 6
+ * In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby. Chiedi all'utente il suo nome e comunicagli se può partecipare o meno alla festa
+*/
+
+Console.WriteLine("\nSNACK 6\n");
+
+string[] guests = {
+    "Nick Carraway",
+    "Daisy Buchanan",
+    "Tom Buchanan",
+    "Jordan Baker",
+    "Myrtle Wilson",
+    "George Wilson",
+    "Owl Eyes",
+    "Klipspringer",
+    "Meyer Wolfsheim"
+};
+
+Console.WriteLine("Inserisci il tuo nome, verificheremo se sei sulla lista per la festa del signor Gatsby");
+string? input6 = Console.ReadLine();
+bool isInGuest = false;
+
+for (int i = 0; i < guests.Length && !isInGuest; i++)
+{
+    if (guests[i].ToLower() == input6.ToLower())
+    {
+        isInGuest = true;
+    }
+}
+
+string output6 = isInGuest ? "Puoi partecipare alla festa" : "Mi dispiace, non puoi partecipare alla festa";
+Console.WriteLine(output6);
 
 /*
  * Snack 5
