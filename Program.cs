@@ -18,8 +18,8 @@ while (!int.TryParse(input12, out _))
     Console.WriteLine("Inserisci un numero");
     input12 = Console.ReadLine();
 }
-string output = "Il numero inserito è ";
-output += isEven(int.Parse(input12)) ? "pari" : "dispari";
+string output12 = $"Il numero inserito è {(isEven(int.Parse(input12)) ? "pari" : "dispari")}";
+Console.WriteLine(output12);
 
 /*
  * Snack 11
@@ -29,26 +29,32 @@ output += isEven(int.Parse(input12)) ? "pari" : "dispari";
  * altrimenti stampare la più lunga delle due.
  */
 
-string PrintStrings(string first, string second)
+string? PrintStrings(string? first, string? second)
 {
-    if (first.Length == second.Length)
+    if (first != null && second != null)
     {
-        return first + " " + second;
-    }
-    else if (first.Length > second.Length)
+        if (first.Length == second.Length)
+        {
+            return first + " " + second;
+        }
+        else if (first.Length > second.Length)
+        {
+            return first;
+        }
+        else
+        {
+            return second;
+        }
+    } else
     {
-        return first;
-    }
-    else
-    {
-        return second;
+        return null;
     }
 }
 
 Console.WriteLine("Inserisci una parola");
-string firstString = Console.ReadLine();
+string? firstString = Console.ReadLine();
 Console.WriteLine("Inserisci un'altra parola");
-string SecondString = Console.ReadLine();
+string? SecondString = Console.ReadLine();
 Console.WriteLine(PrintStrings(firstString, SecondString));
 
 
@@ -103,7 +109,7 @@ bool isInGuest = false;
 
 for (int i = 0; i < guests.Length && !isInGuest; i++)
 {
-    if (guests[i].ToLower() == input6.ToLower())
+    if (input6 != null && guests[i].ToLower() == input6.ToLower())
     {
         isInGuest = true;
     }
